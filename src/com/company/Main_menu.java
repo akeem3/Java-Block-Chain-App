@@ -28,6 +28,7 @@ public class Main_menu extends JFrame implements ActionListener {
         add(LecturerPortal);
         add(Exit);
 
+
         setVisible(true);
 
     }
