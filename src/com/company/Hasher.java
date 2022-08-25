@@ -1,8 +1,10 @@
 package com.company;
 
+// Java program for Generating Hashes
+
 import java.security.MessageDigest;
 
-public class crypt {
+public class Hasher {
 
     // Function that takes the string input
     // and returns the hashed string.
@@ -11,8 +13,7 @@ public class crypt {
         try {
             MessageDigest sha
                     = MessageDigest
-                    .getInstance(
-                            "SHA-256");
+                    .getInstance("SHA-256");
             int i = 0;
 
             byte[] hash
