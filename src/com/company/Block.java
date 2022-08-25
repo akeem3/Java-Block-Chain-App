@@ -59,8 +59,6 @@ public class Block {
         this.timeStamp = timeStamp;
     }
 
-
-
     // Function to calculate the hash
     public String calculateHash()
     {
@@ -78,4 +76,6 @@ public class Block {
         return "Block{" + "hash='" + hash + '\'' + ", previousHash='" + previousHash + '\'' + ", data=" +
                 Arrays.toString(data) + ", timeStamp=" + timeStamp + '}';
     }
+
+
 }

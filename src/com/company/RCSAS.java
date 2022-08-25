@@ -9,15 +9,12 @@ public class RCSAS {
 
 
 
-    // ArrayList to store the blocks
-    public static ArrayList<Block> blockchain = new ArrayList<Block>();
+
 
 
 
 
     public static void main(String[] args) {
-
-
 
     }
 }
