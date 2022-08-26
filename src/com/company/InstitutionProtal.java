@@ -83,9 +83,11 @@ public class InstitutionProtal extends JFrame implements ActionListener {
         }
         else if (e.getSource() == AddResult) {
 
-            name = JOptionPane.showInputDialog(AddResult, "Name: ");
-            mail = JOptionPane.showInputDialog(AddResult, "Email: ");
-            pass = JOptionPane.showInputDialog(AddResult, "Password: ");
+            mail = JOptionPane.showInputDialog(AddResult, "Name: ");
+
+            name = JOptionPane.showInputDialog(AddResult, "Grade: ");
+
+            pass = JOptionPane.showInputDialog(AddResult, "Level: ");
 
 
             String[] Ndata = {name, mail, pass};
