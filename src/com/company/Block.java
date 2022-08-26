@@ -3,10 +3,8 @@ package com.company;
 // Java implementation for creating
 // a block in a Blockchain
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.ArrayList;
 
 public class Block {
 
@@ -15,16 +13,52 @@ public class Block {
     // data of the transaction made
     public String hash;
     public String previousHash;
-    private String[] data;
+    private String mail;
+    private String name;
+    private String pass;
     private LocalDateTime timeStamp;
+    private ArrayList<Block> blockchain;
 
     // Constructor for the block
-    public Block(String[] data, String previousHash)
+    public Block(String name, String mail, String pass, String previousHash)
     {
-        this.data = data;
+        this.mail = mail;
+        this.pass = pass;
+        this.name = name;
         this.previousHash = previousHash;
         this.timeStamp = LocalDateTime.now() ;
         this.hash = calculateHash();
+    }
+
+    /*public blockChain(String name, String mail, String hash){
+        this.name = getName();
+        this.mail = getMail();
+        this.hash = getHash();
+
+    }*/
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getHash() {
@@ -43,13 +77,7 @@ public class Block {
         this.previousHash = previousHash;
     }
 
-    public String[] getData() {
-        return data;
-    }
 
-    public void setData(String[] data) {
-        this.data = data;
-    }
 
     public LocalDateTime getTimeStamp() {
         return timeStamp;
@@ -66,15 +94,15 @@ public class Block {
         // to calculate the hash
         // by using the previous hash,
         // timestamp and the data
-        String calculatedhash = Hasher.sha256(previousHash + timeStamp + data);
+        String calculatedhash = Hasher.sha256(previousHash + timeStamp + name + pass + mail);
 
         return calculatedhash;
     }
 
     @Override
     public String toString() {
-        return "Block{" + "hash='" + hash + '\'' + ", previousHash='" + previousHash + '\'' + ", data=" +
-                Arrays.toString(data) + ", timeStamp=" + timeStamp + '}';
+        return "Block{" + "hash='" + hash + '\n' + "previousHash='" + previousHash + '\n' + "Name=" +
+                name.toString() + "\n" + " password= "+ pass.toString() + "Email" + mail.toString() + "timeStamp=" + timeStamp + '}';
     }
 
 

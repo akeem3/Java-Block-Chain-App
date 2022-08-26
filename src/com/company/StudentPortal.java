@@ -4,10 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static com.company.RCSAS.*;
+import static com.company.Block.*;
 
 public class StudentPortal extends JFrame implements ActionListener {
 
-    private Button view_cert, Back, Search;
+    private Button view_cert, Back, verify;
 
     public StudentPortal(){
         setSize(700, 400);
@@ -32,6 +34,12 @@ public class StudentPortal extends JFrame implements ActionListener {
         if (e.getSource() == Back) {
             setVisible(false);
             RCSAS.main_menu.setVisible(true);
+        }else if(e.getSource() == verify){
+            if(isChainValid() == false){
+                JOptionPane.showMessageDialog(verify, "Hashes not equal");
+            }else{
+                JOptionPane.showMessageDialog(verify, "Hashes are equal");
+            }
         }
     }
 }
